@@ -5,7 +5,7 @@ $(document).ready(function () {
     if(name){
         name = name.replace("=", "");
         $('title').append("❤️"+ name);
-        $('.wishing-text').append("❤️"+ name);
+        $('.wishing-text').append(" ❤️ "+ name);
     }
     
     $(".countdown-holder").hide();
