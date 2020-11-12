@@ -1,10 +1,18 @@
 $(document).ready(function () {
+    let searchParams = new URLSearchParams(window.location.search)
+    console.log(searchParams.toString());
+    var name = searchParams.toString();
+    if(name){
+        name = name.replace("=", "");
+        $('title').append("❤️"+ name);
+        $('.wishing-text').append("❤️"+ name);
+    }
+    
     $(".countdown-holder").hide();
     $("#launch_div").hide();
     setTimeout(function () { $(".countdown-holder").show(); }, 900);
     var launchDate = new Date();
-    launchDate.setSeconds( launchDate.getSeconds() + 10 );
-    console.log(launchDate);
+    launchDate.setSeconds( launchDate.getSeconds() + 7 );
     launchDate = launchDate.getTime();
     var distance = setInterval(function () {
         var now = new Date().getTime();
@@ -23,7 +31,7 @@ $(document).ready(function () {
             $(".begins").hide();
             $("#launch_div").show();
             $("body").addClass('body-background');
-            var images = ["happy-diwali.jpg", "diwali.jpg"];
+            /*var images = ["happy-diwali.jpg", "diwali.jpg"];
             var bg_color = ["#191e21", "#000000"];
             var bg_size = ["contain", "cover"];
             $(function () {
@@ -43,7 +51,7 @@ $(document).ready(function () {
                         $(this).fadeIn();
                     });
                 }, 5000);
-            });
+            });*/
         }
     }, 1000);
 });
