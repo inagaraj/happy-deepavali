@@ -1,16 +1,11 @@
 $(document).ready(function () {
-    let searchParams = new URLSearchParams(window.location.search)
-    console.log(searchParams.toString());
+    let searchParams = new URLSearchParams(window.location.search);
     var name = searchParams.toString();
     if(name){
         name = name.replace("=", "");
         $('title').append("❤️"+ name);
         $('.wishing-text').append(" ❤️ "+ name);
     }
-    
-    $(".countdown-holder").hide();
-    $("#launch_div").hide();
-    setTimeout(function () { $(".countdown-holder").show(); }, 900);
     var launchDate = new Date();
     launchDate.setSeconds( launchDate.getSeconds() + 7 );
     launchDate = launchDate.getTime();
@@ -28,30 +23,7 @@ $(document).ready(function () {
         if (difference < 0) {
             clearInterval(distance);
             $(".countdown-holder").hide();
-            $(".begins").hide();
-            $("#launch_div").show();
-            $("body").addClass('body-background');
-            /*var images = ["happy-diwali.jpg", "diwali.jpg"];
-            var bg_color = ["#191e21", "#000000"];
-            var bg_size = ["contain", "cover"];
-            $(function () {
-                var i = 0;
-                $("body").css("background-image", "url(" + images[i] + ")");
-                $("body").css("background-color", bg_color[i]);
-                $("body").css("background-size", bg_size[i]);
-                setInterval(function () {
-                    i++;
-                    if (i == images.length) {
-                        i = 0;
-                    }
-                    $("body").fadeOut("slow", function () {
-                        $(this).css("background-image", "url(" + images[i] + ")");
-                        $("body").css("background-color", bg_color[i]);
-                        $("body").css("background-size", bg_size[i]);
-                        $(this).fadeIn();
-                    });
-                }, 5000);
-            });*/
+            $("body").addClass("loaded");
         }
     }, 1000);
 });
