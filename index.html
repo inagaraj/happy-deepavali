@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
-    <main>
-        <h1 class="begins">Deepavali Celebration Begins</h1>
-        <div class="countdown-holder">
-           
+    <div id="loader-wrapper">
+        <div id="loader"> 
+            <h1 class="begins">Deepavali Celebration Begins</h1>
+            <div class="countdown-holder">
             <!-- <div>
                 <h1 id="days"></h1>
                 <span>DAYS</span>
@@ -25,13 +25,17 @@
                 <span>MINUTES</span>
             </div> -->
             <div>
-                <h1 id="seconds"></h1>
+                <h1 id="seconds">06</h1>
                 <span>SECONDS</span>
             </div>
-        </div>
+        </div> </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <main>
         <div id="launch_div">
             <!-- setup our canvas element -->
-            <h1 class="wishing-text">Wish you Happy Deepavali</h1>
+            <h1 class="wishing-text">Have a Happy and safe Deepavali</h1>
             <canvas id="canvas">Canvas is not supported in your browser. </canvas>
         </div>
     </main>
